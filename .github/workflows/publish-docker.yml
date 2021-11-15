@@ -25,6 +25,6 @@ jobs:
 
       - name: Push to Container Registry
         run: |
-          echo ${{ github.token }} | docker login -u ${{ github.actor }} https://ghcr.io --password-stdin
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login -u ${{ github.actor }} https://ghcr.io --password-stdin
           docker push ${{ env.DOCKER_TAG_IMAGE }}:${{ env.DOCKER_TAG_LABEL }}
 
