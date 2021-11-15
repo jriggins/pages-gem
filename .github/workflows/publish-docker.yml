@@ -1,4 +1,4 @@
-
+name: Pushlish to Docker
 on:
   push:
     branches: [ master ]
