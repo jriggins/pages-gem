@@ -17,11 +17,8 @@ jobs:
         run: |
           docker build -t ${{ github.ref_name }} -f Dockerfile .
 
-      - name: Login to Container Registry
-        run: |
-          echo ${{ github.token }} | docker login -u ${{ github.user }} https://gchr.io --password-stdin
-
       - name: Push to Container Registry
         run: |
+          echo ${{ github.token }} | docker login -u ${{ github.actor }} https://gchr.io --password-stdin
           echo 'TODO: push'
 
